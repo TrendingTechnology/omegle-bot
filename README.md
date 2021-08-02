@@ -1,1 +1,6 @@
 # omgele-bot
+
+![](https://media.discordapp.net/attachments/833752908088344659/836705159324631070/tenor-19-35-7.gif)
+
+BEHXYCHDYFCII IFNCYICI YAMOMT
+HBTOCOSHBOBUSHBNYOXIA Y
