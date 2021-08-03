@@ -20,6 +20,7 @@ pip install selenium
 - put your topics/interests into topics.txt
 - then run the bot
 - in cmd/terminal python3 omegle.py
+- put whatevetr message u want to send at the start
 
 ![](https://media.discordapp.net/attachments/833752908088344659/836705159324631070/tenor-19-35-7.gif)
 
