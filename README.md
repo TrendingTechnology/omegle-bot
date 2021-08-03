@@ -1,5 +1,8 @@
 # omgele-bot
-
+# wip
+- fixing bug
+- works unefficiently right now
+- 
 # features
 - fast
 - runs in background
