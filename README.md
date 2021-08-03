@@ -1,7 +1,7 @@
 # omgele-bot
 
 # features
-- fast/efficient
+- fast
 - runs in background
 
 ## Requirement
@@ -14,15 +14,14 @@ pip install selenium
 - find your chrome version
 - goto https://chromedriver.chromium.org/
 - find the chromedriver that matches ur chrome version
-- move it into the directory of the omegle bot
+- download n move it into the directory of the omegle bot
 
 # usage
 - put your topics/interests into topics.txt
-- then run the bot
-- in cmd/terminal python3 omegle.py
-- put whatevetr message u want to send at the start
+- run the bot
+- in cmd/terminal write python omegle.py
 
 ![](https://media.discordapp.net/attachments/833752908088344659/836705159324631070/tenor-19-35-7.gif)
 
-BEHXYCHDYFCII IFNCYICI YAMOMT <br>
-HBTOCOSHBOBUSHBNYOXIA Y
+- BEHXYCHDYFCII IFNCYICI YAMOMT <br>
+- HBTOCOSHBOBUSHBNYOXIA Y
