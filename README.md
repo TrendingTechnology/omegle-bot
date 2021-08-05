@@ -1,6 +1,6 @@
 # omgele-bot
 # wip
-- all bugs should be fixed
+- bug
 # features
 - fast
 - runs in background
