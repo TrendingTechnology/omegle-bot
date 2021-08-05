@@ -17,12 +17,26 @@ if check == False: #returns false if its not
 else:
     msg = input("|+| Message to send => ") #msage to send
 
+    try:
+        delay = int(input("|+| Delay => "))
+    except ValueError:
+        print("put a number in")
+    else:
+        pass
+
     PATH = f"{path}\chromedriver.exe" #gets path for chrmoedrvier
 
     driver = webdriver.Chrome(PATH) #initializing driver 
     driver.get("https://omegle.com") #get driver for site
-    
-    time.sleep(2)
+
+
+    with open("topics.txt", "r") as r:
+        for top in r:
+            newtopic = top.strip()
+
+            topic = driver.find_element_by_class_name("newtopicinput")
+            topic.send_keys(newtopic) #sends string to "newtopicinput" the topicbox for omegle
+            topic.send_keys(Keys.RETURN) #keys presses return aka "enter"
 
     text = WebDriverWait(driver, 10).until( #waits 10 seconds
     EC.presence_of_element_located((By.ID, "textbtn")) #for textbtn to be present in html
@@ -47,10 +61,16 @@ while True:
         except:
             pass
         else:
-            new = WebDriverWait(driver, 10).until( 
-            EC.presence_of_element_located((By.CLASS_NAME, "disconnectbtn")) #presses dsconected buton
-            )
-            
-            for i in range(3):
-                new.click() #clicks end buttttonon
-                time.sleep(0.2)
+            time.sleep(delay)
+            try:
+                driver.find_element_by_xpath("//p[contains(text(),'Stranger has disconnected.')]")
+                dscbtn = driver.find_element_by_class_name("disconnectbtn")
+                dscbtn.click()
+                continue
+            except:
+                new = WebDriverWait(driver, 10).until( 
+                EC.presence_of_element_located((By.CLASS_NAME, "disconnectbtn")) #presses dsconected buton
+                )
+                
+                for i in range(3):
+                    new.click() #clicks end buttttonon
