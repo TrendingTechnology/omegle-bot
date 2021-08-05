@@ -21,14 +21,8 @@ else:
 
     driver = webdriver.Chrome(PATH) #initializing driver 
     driver.get("https://omegle.com") #get driver for site
-
-    with open("topics.txt", "r") as r:
-        for top in r:
-            newtopic = top.strip()
-
-            topic = driver.find_element_by_class_name("newtopicinput")
-            topic.send_keys(newtopic) #send string to class "chatmsg" the chatbox for omegle
-            topic.send_keys(Keys.RETURN) #keys presses return aka "enter"
+    
+    time.sleep(2)
 
     text = WebDriverWait(driver, 10).until( #waits 10 seconds
     EC.presence_of_element_located((By.ID, "textbtn")) #for textbtn to be present in html
@@ -42,32 +36,21 @@ else:
     button1 = driver.find_element_by_xpath("//body/div[7]/div[1]/p[3]/input[1]") 
     button1.click() #clicks another button bruh
     
-    time.sleep(0.3)
+while True:
+        message = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "chatmsg")) #find box u use to input message
+        )
 
-    while True:
         try:
-            disabled = WebDriverWait(driver, 0.5).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "chatmsg disabled"))
-            )
-        except:
-            pass
-
-            message = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "chatmsg")) #find box u use to input message
-            )
-
             message.send_keys(msg) #send string to class "chatmsg" the chatbox for omegle
             message.send_keys(Keys.RETURN) #keys presses return aka "enter"
-
+        except:
+            pass
+        else:
             new = WebDriverWait(driver, 10).until( 
             EC.presence_of_element_located((By.CLASS_NAME, "disconnectbtn")) #presses dsconected buton
             )
-
-            time.sleep(0.2)
             
             for i in range(3):
-                new.click() #clicks end butttttttttton
+                new.click() #clicks end buttttonon
                 time.sleep(0.2)
-
-
-
