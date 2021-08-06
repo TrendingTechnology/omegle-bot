@@ -68,10 +68,8 @@ while True:
                 driver.find_element_by_xpath("//p[contains(text(),'Stranger has disconnected.')]")
                 dscbtn = driver.find_element_by_class_name("disconnectbtn")
                 dscbtn.click()
-                print("stranger disconnected")
                 continue
             except:
-                print("stranger didn't disconnect")
                 new = WebDriverWait(driver, 20).until( 
                 EC.presence_of_element_located((By.CLASS_NAME, "disconnectbtn")) #presses dsconected buton
                 )
