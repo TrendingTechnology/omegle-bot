@@ -15,10 +15,10 @@ check = os.path.isfile(f"{path}\chromedriver.exe") #checks if chromedriver is in
 if check == False: #returns false if its not
     print("Please put chromedriver into the current directory!") #put it in ur directory 
 else:
-    msg = input("|+| Message to send => ") #msage to send
+    msg = input("\n|+| Message to send => ") #msage to send
 
     try:
-        delay = int(input("|+| Delay => "))
+        delay = int(input("\n|+| Delay => "))
     except ValueError:
         print("put a number in")
     else:
@@ -51,6 +51,7 @@ else:
     button1.click() #clicks another button bruh
     
 while True:
+
         message = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, "chatmsg")) #find box u use to input message
         )
@@ -61,16 +62,21 @@ while True:
         except:
             pass
         else:
-            time.sleep(delay)
+            # time.sleep(delay)
             try:
+                time.sleep(delay)
                 driver.find_element_by_xpath("//p[contains(text(),'Stranger has disconnected.')]")
                 dscbtn = driver.find_element_by_class_name("disconnectbtn")
                 dscbtn.click()
+                print("stranger disconnected")
                 continue
             except:
-                new = WebDriverWait(driver, 10).until( 
+                print("stranger didn't disconnect")
+                new = WebDriverWait(driver, 20).until( 
                 EC.presence_of_element_located((By.CLASS_NAME, "disconnectbtn")) #presses dsconected buton
                 )
-                
+            try: 
                 for i in range(3):
                     new.click() #clicks end buttttonon
+            except:
+                continue
