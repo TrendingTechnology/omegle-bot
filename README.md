@@ -1,4 +1,3 @@
-# omgele-bot
 ## [omegle-bot tutorial](https://youtu.be/XQanzlMYzU8)
 # features
 - fast
