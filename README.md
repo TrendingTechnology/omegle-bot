@@ -1,5 +1,5 @@
 # omgele-bot
-# wip
+## [omegle-bot tutorial](https://youtu.be/XQanzlMYzU8)
 # features
 - fast
 - runs in background
